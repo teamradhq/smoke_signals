@@ -58,7 +58,8 @@ def transmit_morse(morse_code: str, pin_number: Optional[int] = None):
         if duration:
             result = transmit_character(duration, led, symbol)
             error = error or result
-    time.sleep(config.PAUSE_DURATION)
+        else:
+            time.sleep(config.PAUSE_DURATION)
 
 
 def main():
