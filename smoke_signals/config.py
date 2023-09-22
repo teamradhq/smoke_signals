@@ -1,11 +1,12 @@
 from typing import Dict
+import os
 
 DEFAULT_PIN: int = 17
 
-DOT_DURATION: float = 0.1
-DASH_DURATION: float = 0.3
-REST_DURATION: float = 0.1
-PAUSE_DURATION: float = 0.3
+DOT_DURATION: float = os.environ.get('DOT_DURATION') or 0.1
+DASH_DURATION: float = os.environ.get('DASH_DURATION') or 0.3
+REST_DURATION: float = os.environ.get('REST_DURATION') or 0.1
+PAUSE_DURATION: float = os.environ.get('PAUSE_DURATION') or 0.3
 
 MORSE_CODES: Dict[str, str] = {
     'A': '.-',
